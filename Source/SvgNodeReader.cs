@@ -141,9 +141,9 @@ namespace Svg
         {
             if (this.NodeType == XmlNodeType.EntityReference)
             {
-                if (this._entities.ContainsKey(this.Name))
+                if (this.Entities.TryGetValue(this.Name, out var value))
                 {
-                    this._value = this._entities[this.Name];
+                    this._value = value;
                 }
                 else
                 {
